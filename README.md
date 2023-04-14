@@ -5,16 +5,15 @@ Package providing a way to pack a full directory of files into a single go file 
 go install github.com/sebps/filepacker@v1.0.0
 
 ## Pack files
-To pack a given directory into a single file package go file, run the following command :
+Executing filepacker command will pack a given source directory into a single .go file. All the directory files will be recursively wrapped.
+Any file will be made further accessible at run time combining a leading character "/" and the path of the file relatively to its initial source directory.
+
+## Usage 
+To pack a directory run the following command :
 
 `filepacker pack -s directory -t package -p resources` 
 
-This will generate a filepackage.go file recursively wrapping all of the current directory files. Any file will futher be accessible combining a leading character "/" and the path of the file relatively to its source directory.
-
-## Usage 
-
 ## Generated file 
-
 The result of the previous command execution will be a **package.go** file with the following content :
 
 ```go
@@ -39,7 +38,6 @@ func (r *repository) Get(filename string) []byte {
 	return repositoryInstance.storage[filename]
 }
 ```
-
 
 ## Access files
 At runtime, content of the files can be accessed from anywhere using the package getter as follows : 
