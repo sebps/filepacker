@@ -2,7 +2,7 @@
 Package providing a way to pack a full directory of files into a single go file in order to provide access to their content at runtime.
 
 ## Install 
-go install github.com/sebps/filepacker@v1.0.0
+`go install github.com/sebps/filepacker@v1.0.0`
 
 ## Pack files
 Executing filepacker command will pack a given source directory into a single .go file. All the directory files will be recursively wrapped.
